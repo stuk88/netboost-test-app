@@ -4,15 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SocketIoModule } from 'ngx-socket-io';
+
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
+    HttpClientModule,
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    SocketIoModule.forRoot({ url: 'http://localhost:3000', options: {} })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
